@@ -44,3 +44,78 @@ async function foo2() {
     }
   }
 }
+
+type User = {
+  name: string;
+  age?: number;
+};
+
+const user: User = {
+  name: "Rojin",
+  age: 25,
+};
+
+user.age = 19;
+
+// 3
+const searchParams = new URLSearchParams(window.location.search);
+
+const id = searchParams.get("id");
+
+if (id) {
+  console.log(id.toUpperCase());
+  //   console.log(id?.toUpperCase());
+  //   console.log(id!.toUpperCase()); // what is it.
+} else {
+  console.log("Id not found!");
+}
+
+// 4
+type RouteConfig = {
+  path: string;
+  component: string | number;
+};
+const routingConfig = {
+  routes: [
+    {
+      path: "home",
+      component: "HomeComponent",
+    },
+    {
+      path: "about",
+      component: 12,
+    },
+    {
+      path: "contact",
+      component: "ContactComponent",
+    },
+  ],
+};
+
+// best approach
+const routingConfig2: { routes: RouteConfig[] } = {
+  routes: [
+    {
+      path: "home",
+      component: "HomeComponent",
+    },
+    {
+      path: "about",
+      component: 12,
+    },
+    {
+      path: "contact",
+      component: "ContactComponent",
+    },
+  ],
+};
+
+const createRoutes = (config: {
+  routes: RouteConfig[];
+  //   routes: {
+  //     path: string;
+  //     component: string | number;
+  //   }[];
+}) => {};
+
+createRoutes(routingConfig);
