@@ -4,7 +4,7 @@
   "description": "Server-Side Programming",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "class": "nodemon class.ts"
   },
   "keywords": [],
   "author": "",
