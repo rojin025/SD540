@@ -119,3 +119,22 @@ const createRoutes = (config: {
 }) => {};
 
 createRoutes(routingConfig);
+
+// Instenceof
+try {
+  if (Math.random() > 0.5) {
+    throw new Error("Oh dear!");
+  }
+} catch (error) {
+  if (error instanceof Error) console.log(error.message);
+}
+
+class UserClass {
+  private username: string = "";
+  private username2?: string;
+  private username3: string;
+
+  constructor(u: string) {
+    this.username3 = u;
+  }
+}
