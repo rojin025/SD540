@@ -1,4 +1,9 @@
-const getName = (params: { first: string; last: string; }) => {
+type Person = {
+  first: string;
+  last?: string;
+};
+
+const getName = (params: Person): string => {
   if (params.last) {
     return `${params.first} ${params.last}`;
   }

@@ -1,11 +1,10 @@
-const getName = (first: string, last: string) => {
+const getName2 = (first: string, last?: string): string => {
   if (last) {
     return `${first} ${last}`;
   }
   return first;
 };
 
-const name1 = getName("Theo");
+const name3 = getName2("Theo");
 
-const name2 = getName("Asaad", "Saad");
-
+const name4 = getName2("Asaad", "Saad");
