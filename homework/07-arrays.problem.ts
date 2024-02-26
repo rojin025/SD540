@@ -1,9 +1,9 @@
-interface User {
+interface User4 {
   id: number;
   firstName: string;
   lastName: string;
   role: "admin" | "user" | "super-admin";
-  posts: Post;
+  posts: Post[];
 }
 
 interface Post {
@@ -11,7 +11,7 @@ interface Post {
   title: string;
 }
 
-const defaultUser: User = {
+const defaultUser2: User4 = {
   id: 1,
   firstName: "Asaad",
   lastName: "Saad",
