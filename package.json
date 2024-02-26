@@ -4,9 +4,15 @@
   "description": "Server-Side Programming",
   "main": "index.js",
   "scripts": {
-    "class": "nodemon class.ts"
+    "class": "nodemon class.ts",
+    "start": "nodemon app.ts"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2"
+  }
 }
