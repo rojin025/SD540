@@ -3,7 +3,7 @@ interface User3 {
   firstName: string;
   lastName: string;
   // How do we ensure that role is only one of: 'admin' or 'user' or 'super-admin'
-  role: "admin" | "user" | "super-admin";
+  role: "admin" | "user" | "super-admin"; // Union
 }
 
 const myDefaultUser: User3 = {

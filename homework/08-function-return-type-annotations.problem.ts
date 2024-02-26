@@ -12,7 +12,8 @@ interface Post {
 }
 
 // How do we ensure that makeUser ALWAYS returns a user?
-const makeUser = () => {
+const makeUser = (): User4 => {
+  // const makeUser: () => User4 = () => {
   return {
     id: 0,
     firstName: "Default First Name",

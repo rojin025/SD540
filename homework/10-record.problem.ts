@@ -1,6 +1,10 @@
-const createCache = () => {
-  const cache = {};
+type CacheType = {
+  [key: string]: string;
+};
 
+const createCache = () => {
+  const cache: CacheType = {};
+  // const cache: Record<string, string> = {}
   const add = (id: string, value: string) => {
     cache[id] = value;
   };
@@ -15,4 +19,3 @@ const createCache = () => {
     remove,
   };
 };
-
