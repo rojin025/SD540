@@ -1,4 +1,4 @@
-const addListener = (onFocusChange: unknown) => {
+const addListener = (onFocusChange: (v: boolean) => void) => {
   window.addEventListener("focus", () => {
     onFocusChange(true);
   });

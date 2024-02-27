@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "class": "nodemon class.ts",
+    "2": "nodemon 2_event_Loop.ts",
     "start": "nodemon app.ts"
   },
   "keywords": [],
