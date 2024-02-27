@@ -1,0 +1,17 @@
+{
+  "name": "homework_01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon customError.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2"
+  }
+}
