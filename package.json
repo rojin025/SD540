@@ -6,6 +6,7 @@
   "scripts": {
     "class": "nodemon class.ts",
     "2": "nodemon 2_event_Loop.ts",
+    "3": "nodemon 3_Core_Modules.ts",
     "start": "nodemon app.ts"
   },
   "keywords": [],
