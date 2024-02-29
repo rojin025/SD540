@@ -108,7 +108,23 @@ const server = http.createServer((req, res) => {
   } else if (pathName === "/products") {
     res.end("This is the Product");
   } else {
-    res.writeHead(404);
+    res.writeHead(404, {
+      "Content-type": "text/html",
+      "my-own-header": "Error",
+    });
+    res.write("Something");
+    res.write("went Wrong.");
     res.end("Page Not found.");
   }
 });
+
+// Day 4
+import { createServer } from "node:http";
+const server2 = createServer();
+server2.on("request", function (req, res) {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  // Inform client of content type res.write('Hello '); // content
+  res.write("World!"); // content
+  res.end();
+});
+server2.listen(3000, () => console.log(`listening to 3000`));
