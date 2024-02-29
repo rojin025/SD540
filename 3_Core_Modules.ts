@@ -86,10 +86,29 @@
 // import { join } from "node:path";
 
 // const pathToSource = join(__dirname, "3_Core_Modules.ts");
-// const pathToDestination = join(__dirname, "file.gz");
+// const pathToDestination = join(__dirname, "zipedFile.gz");
 
 // const readableStream = createReadStream(pathToSource);
 // const gzipStream = createGzip(); // Duplex Stream // read and write
 // const writableStream = createWriteStream(pathToDestination);
 
 // readableStream.pipe(gzipStream).pipe(writableStream);
+
+/**
+ * Server
+ */
+import http from "node:http";
+import url from "node:url";
+
+const server = http.createServer((req, res) => {
+  const pathName = req.url;
+
+  if (pathName === "/" || pathName === "/overview") {
+    res.end("This is the Overview.");
+  } else if (pathName === "/products") {
+    res.end("This is the Product");
+  } else {
+    res.writeHead(404);
+    res.end("Page Not found.");
+  }
+});
