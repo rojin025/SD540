@@ -122,8 +122,9 @@ const server = http.createServer((req, res) => {
 import { createServer } from "node:http";
 const server2 = createServer();
 server2.on("request", function (req, res) {
+  // Inform client of content type
   res.writeHead(200, { "Content-Type": "text/plain" });
-  // Inform client of content type res.write('Hello '); // content
+  res.write("Hello "); // content
   res.write("World!"); // content
   res.end();
 });
