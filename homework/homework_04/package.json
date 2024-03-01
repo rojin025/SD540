@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.ts"
+    "start": "nodemon app.ts",
+    "test": "nodemon index.ts"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,8 @@
     "ts-node": "^10.9.2"
   },
   "dependencies": {
+    "@sendgrid/mail": "^8.1.1",
+    "dotenv": "^16.4.5",
     "sharp": "^0.33.2"
   }
 }
