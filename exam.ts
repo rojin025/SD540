@@ -10,11 +10,41 @@ console.log("Exam Running");
 //     process.nextTick(() => console.log("nexttick"));
 //   });
 
-// ex2
-(() => new Promise((resolve) => resolve("promise")))().then((p) =>
-  console.log(p)
-);
-setTimeout(() => console.log("timeout"), 0);
-setImmediate(() => console.log("immediate"));
-queueMicrotask(() => console.log("microtask"));
-process.nextTick(() => console.log("nexttick"));
+// // ex2
+// (() => new Promise((resolve) => resolve("promise")))().then((p) =>
+//   console.log(p)
+// );
+// setTimeout(() => console.log("timeout"), 0);
+// setImmediate(() => console.log("immediate"));
+// queueMicrotask(() => console.log("microtask"));
+// process.nextTick(() => console.log("nexttick"));
+
+/**
+ * Blocking vs Non - Blocking
+ */
+// non Blocking
+const add = (a: number, b: number) => {
+  setTimeout(() => {
+    for (let i = 0; i < 9e7; i++) {}
+    console.log(a + b);
+  }, 0);
+};
+
+// Blocking
+const add2 = (a: number, b: number) => {
+  for (let i = 0; i < 9e7; i++) {}
+  console.log(a + b);
+};
+
+console.log("start");
+const A = add(1, 2);
+const B = add(2, 3);
+const C = add(3, 4);
+console.log("end");
+
+// console.log("start");
+// const A = add2(1, 2);
+// const B = add2(2, 3);
+// const C = add2(3, 4);
+// console.log("end");
+// What happen if we set the timer to 0?
