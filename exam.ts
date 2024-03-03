@@ -36,11 +36,11 @@ const add2 = (a: number, b: number) => {
   console.log(a + b);
 };
 
-console.log("start");
-const A = add(1, 2);
-const B = add(2, 3);
-const C = add(3, 4);
-console.log("end");
+// console.log("start");
+// const A = add(1, 2);
+// const B = add(2, 3);
+// const C = add(3, 4);
+// console.log("end");
 
 // console.log("start");
 // const A = add2(1, 2);
@@ -66,20 +66,61 @@ student.on('graduation', (year)=> console.log(`Congrats ${year} graduates.`)); s
  * Observer pattern
  */
 
-import EventEmitter from "events";
+// import EventEmitter from "events";
 
-// Create a custom event emitter
-const eventEmitter = new EventEmitter();
+// // Create a custom event emitter
+// const eventEmitter = new EventEmitter();
 
-// Function to listen for the 'graduation' event
-function congratulateOnGraduation(year: number): void {
-  eventEmitter.on("graduation", () => {
-    console.log(`Congratulations on graduating in ${year}!`);
-  });
+// // Function to listen for the 'graduation' event
+// function congratulateOnGraduation(year: number): void {
+//   eventEmitter.on("graduation", () => {
+//     console.log(`Congratulations on graduating in ${year}!`);
+//   });
+// }
+
+// // Example usage
+// congratulateOnGraduation(2024);
+
+// // Emit the 'graduation' event
+// eventEmitter.emit("graduation");
+
+import events from "node:events";
+
+class Graduate extends events {
+  constructor() {
+    super();
+  }
+
+  celebrate(year: number, name: string) {
+    this.emit("gradutaion", year, name);
+  }
 }
 
-// Example usage
-congratulateOnGraduation(2024);
+const graduate = new Graduate();
 
-// Emit the 'graduation' event
-eventEmitter.emit("graduation");
+graduate.on("gradutaion", (year, name) => {
+  console.log("Congradulation ", name, year);
+});
+
+// graduate.celebrate(2025, "rojin");
+
+/**
+ * PATH CoreModule
+ */
+import { join } from "node:path";
+
+const path = join("hello", "world", "!!!");
+// console.log(path);
+const pathToFile = join(__dirname, "exam.ts");
+// console.log(pathToFile);
+
+/**
+ * Buffer Global var
+ */
+const buffer = Buffer.from("Hello");
+buffer.write("ipp", 1);
+// console.log(buffer.toString());
+
+/**
+ * Read Files
+ */
