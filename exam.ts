@@ -48,3 +48,16 @@ console.log("end");
 // const C = add2(3, 4);
 // console.log("end");
 // What happen if we set the timer to 0?
+
+/**
+ * coding Practice for
+
+Using events core module import events from 'node:events';
+class MSDStudent extends events { constructor(){ super() }
+triggerGraduation(year: number) { this.emit('graduation', year);
+} }
+const student = new MSDStudent();
+student.on('graduation', (year)=> console.log(`Congrats ${year} graduates.`)); student.triggerGraduation(2024);
+
+
+ */
