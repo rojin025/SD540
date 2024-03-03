@@ -61,3 +61,25 @@ student.on('graduation', (year)=> console.log(`Congrats ${year} graduates.`)); s
 
 
  */
+
+/**
+ * Observer pattern
+ */
+
+import EventEmitter from "events";
+
+// Create a custom event emitter
+const eventEmitter = new EventEmitter();
+
+// Function to listen for the 'graduation' event
+function congratulateOnGraduation(year: number): void {
+  eventEmitter.on("graduation", () => {
+    console.log(`Congratulations on graduating in ${year}!`);
+  });
+}
+
+// Example usage
+congratulateOnGraduation(2024);
+
+// Emit the 'graduation' event
+eventEmitter.emit("graduation");
