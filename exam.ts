@@ -42,11 +42,11 @@ const add2 = (a: number, b: number) => {
 // const C = add(3, 4);
 // console.log("end");
 
-// console.log("start");
-// const A = add2(1, 2);
-// const B = add2(2, 3);
-// const C = add2(3, 4);
-// console.log("end");
+console.log("start");
+const A = add2(1, 2);
+const B = add2(2, 3);
+const C = add2(3, 4);
+console.log("end");
 // What happen if we set the timer to 0?
 
 /**
@@ -124,3 +124,12 @@ buffer.write("ipp", 1);
 /**
  * Read Files
  */
+
+/**
+ * iffy funtion for async
+ */
+(async function () {
+  console.log("someCode");
+})();
+
+// Using Streams
